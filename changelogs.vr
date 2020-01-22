@@ -1,16 +1,8 @@
-[CameraMotion.py]
--Just a code refresh update
+[Console]
+-Updated to new GUI
 
-[TestUpdate.py]
--Added a Dummy Update File to Check Update Mech
--This Can Be deleted Safely After Installation
+[SystemTest]
+-Updated to new GUI
 
-[UpdateConsole.py]
--added mech to append update writes
--Updated the fetch Mechanism
--Now before updating this creates a ConsoleBackup.zip of already present files on system
--Updated the UI
--Minor Big fixes
-
-[Console.py]
--Checks and removes the VisiorNewUpdates file is present
+[TkinterCam]
+-Updated to new GUI
