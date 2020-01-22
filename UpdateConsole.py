@@ -6,6 +6,8 @@ from tkinter import *
 from zipfile import ZipFile
 from git import Repo
 from MessageBox import messagebox
+from platform import  system
+
 
 
 class Updates():
@@ -13,6 +15,7 @@ class Updates():
     text = ""
     vsb = ""
     CONSOLE_BACKUP_FILE = "ConsoleBackup.zip"
+    DELETE_COMMAND = ""
 
     def __init__(self):
         self.root = Tk()
@@ -35,6 +38,23 @@ class Updates():
         self.text.configure(yscrollcommand = self.vsb.set)
         self.vsb.pack(side = "right", fill = 'y')
         self.text.pack(side = "left")
+        self.setDelCommand()
+
+
+
+    def setDelCommand(self,root_dir = "VisiorNewUpdates"):
+        os_info  =  system().lower()
+        self.text.insert(END, f"->Platform Detected  :  {os_info} \n\n")
+        self.text.yview_moveto(1)
+        self.root.update()
+        if "windows" in os_info:
+            self.DELETE_COMMAND = 'rmdir /S /Q "{}"'.format(root_dir)
+        else:
+            self.DELETE_COMMAND = "rm -r {}".format(root_dir)
+
+        return self.DELETE_COMMAND
+
+
 
     def CreateUpdate(self):
         files_dict = { }
@@ -99,18 +119,18 @@ class Updates():
             shutil.copy(root_dir + "/changelogs.vr", os.getcwd())
             sleep(0.5)
             messagebox("Updates Completed", "Updates Successfully Installed")
-            os.system('rmdir /S /Q "{}"'.format(root_dir))
+            os.system(self.DELETE_COMMAND)#'rmdir /S /Q "{}"'.format(root_dir))
 
 
         except Exception as e:
             messagebox("Updates Failed", f"The Error is due to {e}")
-            os.system('rmdir /S /Q "{}"'.format(root_dir))
+            os.system(self.DELETE_COMMAND)#'rmdir /S /Q "{}"'.format(root_dir))
 
     def CheckUpdate(self):
         try:
             new_update_file = "VisiorNewUpdates"
             if os.path.exists(new_update_file):
-                os.system('rmdir /S /Q "{}"'.format(new_update_file))
+                os.system(self.DELETE_COMMAND)#'rmdir /S /Q "{}"'.format(new_update_file))
                 self.text.insert(END, "Existing Update file removed\nGetting New Files ...\n")
                 self.text.yview_moveto(1)
                 self.root.update()
@@ -172,7 +192,7 @@ class Updates():
 
             if len(updates_to_be_installed) >= 1:
                 if self.CONSOLE_BACKUP_FILE in os.listdir():
-                    os.system('rmdir /S /Q "{}"'.format(self.CONSOLE_BACKUP_FILE))
+                    os.system(self.setDelCommand(self.CONSOLE_BACKUP_FILE))#'rmdir /S /Q "{}"'.format(self.CONSOLE_BACKUP_FILE))
 
                 self.CONSOLE_BACKUP_FILE = ZipFile("ConsoleBackup.zip", "w")
                 self.text.insert(END, "Updates Avaliable  \n\n")
@@ -192,7 +212,7 @@ class Updates():
             else:
                 sleep(0.3)
                 messagebox("Updates Completed", "Latest Updates Already Installed ... :)")
-                os.system('rmdir /S /Q "{}"'.format(new_update_file))
+                os.system(self.DELETE_COMMAND)
 
             self.root.mainloop()
 

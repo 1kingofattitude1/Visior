@@ -1,3 +1,5 @@
+ChangeLogs
+
 [Console]
 -Updated to new GUI
 
@@ -6,3 +8,6 @@
 
 [TkinterCam]
 -Updated to new GUI
+
+[UpdateConsole]
+- Updating now is compatible with Linux platform
