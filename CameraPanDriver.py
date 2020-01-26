@@ -1,12 +1,10 @@
 import os
 from time import sleep
-
 import pigpio
-
 from settings import SensorSettings
 
 
-class AngluarSweep():
+class AngularSweep():
     NECK_PIN = 17
     HEAD_PIN = 27
     CURRENT_VERTICAL_ANGLE = 500
