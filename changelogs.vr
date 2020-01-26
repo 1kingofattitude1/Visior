@@ -1,13 +1,15 @@
 ChangeLogs
 
-[Console]
--Updated to new GUI
+[CameraPanDriver v1.0]
+- Migrated to New Library "pigpio"
+- This introduces a camera motion driver
+- This increases the stability of the pan motion of camera
+- this driver can be used to moved camera in variety of
+  > free and restricted modes
+- Added settings pin config for CameraPanDriver
 
-[SystemTest]
--Updated to new GUI
+[Tkintercam]
+-Gui Fix for raspberry pi's resolution
 
-[TkinterCam]
--Updated to new GUI
-
-[UpdateConsole]
-- Updating now is compatible with Linux platform
+[SystemSettings.cfg]
+-Added the pins for CameraPanModule
