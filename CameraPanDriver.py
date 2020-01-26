@@ -82,7 +82,7 @@ def FreeSweep(self, direction = "vertical"):
     self.AutoReset()
 
 
-class CameraPanDriver(AngluarSweep):
+class CameraPanDriver(AngularSweep):
     pi = ""
     SWEEP_VAL = 500
     VERTICAL_LOOK_ANGLE = 500
