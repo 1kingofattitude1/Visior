@@ -176,7 +176,7 @@ class RcModeController:
                    bg = "#00e6b8",
                    fg = "black",
                    borderwidth = 3, highlightthickness = 0, activebackground = "black",
-                   activeforeground = "white", relief = "ridge").place(relx = 0.013, rely = 0.57)
+                   activeforeground = "white", relief = "ridge").place(relx = 0.005, rely = 0.57)
             Button(self.window, font = ("Courier bold", 11), text = "\u25CF " + "Record", command = self.SaveFrame,
                    width = 10,
                    bg = "black",
@@ -278,34 +278,34 @@ class RcModeController:
                                   fg = "red",
                                   borderwidth = 0, highlightthickness = 0, activebackground = "black",
                                   activeforeground = "white")
-        self.MoveForward.place(relx = 0.7, rely = 0.72)
+        self.MoveForward.place(relx = 0.675, rely = 0.72)
         self.MoveBackward = Button(self.window, font = ("Courier bold", 16), text = "\u2193", width = 4,
                                    bg = "black",
                                    fg = "red",
                                    borderwidth = 0, highlightthickness = 0, activebackground = "black",
                                    activeforeground = "white")
-        self.MoveBackward.place(relx = 0.7, rely = 0.8)
+        self.MoveBackward.place(relx = 0.675, rely = 0.8)
         self.TurnLeft = Button(self.window, font = ("Courier bold", 16), text = "\u2190", width = 4,
                                bg = "black",
                                fg = "red",
                                borderwidth = 0, highlightthickness = 0, activebackground = "black",
                                activeforeground = "white")
-        self.TurnLeft.place(relx = 0.62, rely = 0.8)
+        self.TurnLeft.place(relx = 0.6, rely = 0.8)
         self.TurnRight = Button(self.window, font = ("Courier bold", 16), text = "\u2192", width = 4,
                                 bg = "black",
                                 fg = "red",
                                 borderwidth = 0, highlightthickness = 0, activebackground = "black",
                                 activeforeground = "white")
-        self.TurnRight.place(relx = 0.78, rely = 0.8)
+        self.TurnRight.place(relx = 0.75, rely = 0.8)
         Label(self.window, font = ("Arial bold", 7), justify = "left",
               text = "Up Key : Forward\n\nDown Key : Back\n\nLeft Key : Left\n\nRight Key : Right",
               width = len(" Camera Control "),
               fg = "#00e6b8",
-              bg = "black").place(relx = 0.86, rely = 0.73)
+              bg = "black").place(relx = 0.82, rely = 0.73)#change value
 
         Label(self.window, font = ("Courier bold", 12), text = "Motion Control", width = len(" Camera Control "),
               fg = "white",
-              bg = "black").place(relx = 0.63, rely = 0.89)
+              bg = "black").place(relx = 0.6, rely = 0.89)
 
 
 if __name__ == "__main__":

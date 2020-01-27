@@ -82,13 +82,13 @@ class Console:
 
             Button(self.window, font = ("Cambria bold", 11), text = "Proceed", width = 10, fg = "#00e6b8", bg = "black",
                    borderwidth = 3, highlightthickness = 0, command = self.callDecider, activebackground = "black",
-                   activeforeground = "white", relief = "ridge").place(relx = 0.83, rely = y_pos - 0.08)
+                   activeforeground = "white", relief = "ridge").place(relx = 0.8, rely = y_pos - 0.09)
 
             Button(self.window, font = ("Cambria bold", 11), text = "Check Updates", command = self.CheckUpdates,
                    width = 11,
                    fg = "#2ade2a", bg = "black",
                    borderwidth = 3, highlightthickness = 0, activebackground = "black",
-                   activeforeground = "white", relief = "ridge").place(relx = 0.02, rely = 0.93)
+                   activeforeground = "white", relief = "ridge").place(relx = 0.02, rely = 0.92)
 
             # Label(self.window, text = "Select any option and click 'Next' to proceed", bg = "black", fg = "red",
             #       font = ("Courier ", 10), justify = "left").place(relx = 0.05, rely = y_pos - 0.08)
@@ -156,7 +156,7 @@ class Console:
             i += 1
         sleep(0.2)
         Label(self.window, text = "C o n t r o l    P a n e l", bg = "black", fg = "#2ade2a",
-              font = ("Courier ", 15)).place(relx = 0.35, rely = 0.12)
+              font = ("Courier ", 15),anchor=CENTER).place(relx = 0.35, rely = 0.12)
 
     def CheckUpdates(self):
         # CreateUpdate()
