@@ -1,8 +1,13 @@
-ChangeLogs
+###########ChangeLogs###########
 
-[Console]
--Gui Fix for raspberry pi's resolution
+[CameraPanDriver]
+-Updated Driver with Motion Angle
+-Now the lwft to right look is Expanded
+-The Up and Down look angles are reduced to adjust the Ultrasonic
 
-
-[Tkintercam]
--Gui Fix for raspberry pi's resolution
+[UltrasonicDriver]
+-Migrated to work with pigpio
+-Can control the moition of Ultrasonic
+-Also able to send data with detection status
+-Inherits AngularSweep class in CameraPanDriver
+-Dependency <-> CameraPanDriver
