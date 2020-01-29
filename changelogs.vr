@@ -2,12 +2,13 @@
 
 [CameraPanDriver]
 -Updated Driver with Motion Angle
--Now the lwft to right look is Expanded
+-The left to right look angle is Expanded
 -The Up and Down look angles are reduced to adjust the Ultrasonic
+-Now AutoReset in AngularSweep can be specified an angle explicitly
 
 [UltrasonicDriver]
 -Migrated to work with pigpio
 -Can control the moition of Ultrasonic
 -Also able to send data with detection status
 -Inherits AngularSweep class in CameraPanDriver
--Dependency <-> CameraPanDriver
+-Dependency UltrasonicDriver <-> CameraPanDriver
