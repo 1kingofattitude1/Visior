@@ -28,11 +28,11 @@ class UltraSonicControl(AngularSweep):
 		AlertDistance = self.Threshold_Distance/100
 		if self.SensorObject.distance <= AlertDistance:
 			if get_distance:
-				return True,self.SensorObject.distance
+				return False,self.SensorObject.distance
 			else:
-				return True
+				return False
 		else:
-			return False
+			return True
 	
 	def UltrasonicLookLeft(self,angle_left = 90):
 		self.HorizontalAngleChange(angle_left)
